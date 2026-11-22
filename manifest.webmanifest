@@ -1,0 +1,16 @@
+{
+  "name": "Salud Conecta",
+  "short_name": "Salud Conecta",
+  "description": "Recordatorios sencillos de medicamentos y controles, con aviso a su cuidador.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f2f5f9",
+  "theme_color": "#12365a",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
