@@ -1,8 +1,8 @@
 // Service worker de Salud Conecta (MVP).
 // Guarda en caché lo básico para poder abrir la app sin conexión.
 // Si cambia el código, sube el número de versión para que se actualice.
-const VERSION = 'saludconecta-v1';
-const CORE = ['/', '/index.html', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png'];
+const VERSION = 'saludconecta-v3';
+const CORE = ['/', '/index.html', '/styles.css', '/app.js', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
@@ -22,7 +22,7 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   // La página: primero la red (para ver cambios) y, si falla, la copia guardada.
   if (req.mode === 'navigate') {
-    e.respondWith(fetch(req).then((r) => { const copy = r.clone(); caches.open(VERSION).then((c) => c.put('/index.html', copy)); return r; })
+    e.respondWith(fetch(req).then((r) => { const copy = r.clone(); caches.open(VERSION).then((c) => c.put('/index.html', '/styles.css', '/app.js', copy)); return r; })
       .catch(() => caches.match('/index.html')));
     return;
   }
