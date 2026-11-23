@@ -1,7 +1,7 @@
 // Service worker de Salud Conecta (MVP).
 // Guarda en caché lo básico para poder abrir la app sin conexión.
 // Si cambia el código, sube el número de versión para que se actualice.
-const VERSION = 'saludconecta-v3';
+const VERSION = 'saludconecta-v6';
 const CORE = ['/', '/index.html', '/styles.css', '/app.js', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
